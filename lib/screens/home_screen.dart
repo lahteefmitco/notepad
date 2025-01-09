@@ -1,5 +1,8 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:notepad/notepad_service.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Save content
   void _saveContent() async {
-    await _notepadService.saveToFile('${_textController.text.trim()}\n');
+    await _notepadService.saveToFile("${_textController.text.trim()}\n");
     _textController.clear();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ScaffoldMessenger.of(context)
@@ -48,6 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
     _textController.dispose();
     super.dispose();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -139,4 +144,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  
 }
