@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
@@ -6,6 +7,7 @@ class NotepadService {
   // Get the file path
   Future<File> _getFile() async {
     final directory = await getApplicationDocumentsDirectory();
+    log("directory path:- ${directory.path}");
     return File('${directory.path}/notepad.txt');
   }
 
